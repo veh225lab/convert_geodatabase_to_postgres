@@ -3,11 +3,11 @@ import psycopg2
 from shapely.geometry import shape
 
 # Connexion à la .gdb
-gdb_path = 'IlotGeoportail.gdb'
+gdb_path = 'nom_de_la_geodatabase.gdb'
 layers = fiona.listlayers(gdb_path)
 
 # Connexion à PostgreSQL
-conn = psycopg2.connect("dbname=opix user=postgres password=postgres host=localhost")
+conn = psycopg2.connect("dbname=nom_db_postgres user=utilisateur password=mot_passe host=localhost")
 cur = conn.cursor()
 
 for layer in layers:
